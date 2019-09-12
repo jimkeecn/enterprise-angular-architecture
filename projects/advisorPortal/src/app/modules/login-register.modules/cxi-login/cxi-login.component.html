@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="login-content">
+    <div class="login-content-message-board">
+      <div class="message-item">
+        <img src="assets/cxilogo-white.png" class="logo-img" />
+      </div>
+      <div class="message-item">
+        <p class="welcome">welcome!</p>
+      </div>
+      <div class="message-item">
+        <p class="info">
+          Welcome to the Advisor portal for CXI Fund. Please login to view
+          details.
+        </p>
+      </div>
+      <div class="message-item">
+        <p class="footer">
+          Copyright Cxi Software
+        </p>
+      </div>
+    </div>
+    <div class="login-content-form">
+      <div class="form-item">
+        <p class="form-message">Login with your advisor account.</p>
+      </div>
+      <div class="form-item" style="margin-top:50px;">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Email or Advisor Number *" />
+        </mat-form-field>
+      </div>
+      <div class="form-item">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Password *" type="password" />
+        </mat-form-field>
+      </div>
+      <div class="form-item" style="margin-top:20px;">
+        <button
+          mat-raised-button
+          color="primary"
+          style="width:150px;"
+          [routerLink]="['/app/dashboard']"
+        >
+          LOGIN
+        </button>
+        <a mat-button routerLink="." style="margin-left:20px;"
+          >Forgot Password</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

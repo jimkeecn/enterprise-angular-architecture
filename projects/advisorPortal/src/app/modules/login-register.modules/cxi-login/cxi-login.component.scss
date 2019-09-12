@@ -1,0 +1,81 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.login-content {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.login-content-message-board {
+  background-color: #2196f3;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.login-content-form {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 980px) {
+  .login-content {
+    width: 900px;
+    height: 500px;
+  }
+  .login-content-message-board {
+    width: 300px;
+    height: 100%;
+  }
+  .login-content-form {
+    width: 600px;
+    height: 100%;
+  }
+}
+.message-item {
+  display: flex;
+  justify-content: center;
+}
+.logo-img {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+}
+.welcome {
+  font-size: 30px;
+  margin-top: 20px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.info {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 400;
+  width: 60%;
+  text-align: center;
+}
+
+.footer {
+  font-size: 14px;
+  margin-top: 150px;
+  font-weight: 400;
+  width: 60%;
+  text-align: center;
+}
+.form-item {
+  padding: 0 50px;
+}
+.form-message {
+  margin-top: 60px;
+  opacity: 0.8;
+  font-size: 18px;
+}

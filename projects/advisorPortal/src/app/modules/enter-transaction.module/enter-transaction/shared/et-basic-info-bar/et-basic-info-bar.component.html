@@ -1,0 +1,34 @@
+<div class="cxi-form-group">
+  <h5>
+    Current Transaction Information
+    <i class="fas fa-chevron-down form-control"></i>
+  </h5>
+  <div class="row">
+    <div class="col-3">
+      <label>Transaction Number</label>
+      <p>{{ basicInfo.transactionNumber }}</p>
+    </div>
+    <div class="col-3">
+      <label>Account Number</label>
+      <p>{{ basicInfo.accountNumber }}</p>
+    </div>
+    <div class="col-3">
+      <label>Account Type</label>
+      <p>{{ basicInfo.accountType }}</p>
+    </div>
+    <div class="col-3">
+      <label>Received Date</label>
+      <p>{{ basicInfo.receivedDate | date: "dd/MM/yyyy" }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <label>Issuer</label>
+      <p>{{ basicInfo.issuer }}</p>
+    </div>
+    <div class="col-3">
+      <label>Product</label>
+      <p>{{ basicInfo.product }}</p>
+    </div>
+  </div>
+</div>

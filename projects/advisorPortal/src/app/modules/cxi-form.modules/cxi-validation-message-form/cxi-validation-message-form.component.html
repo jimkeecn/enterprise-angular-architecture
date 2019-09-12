@@ -1,0 +1,15 @@
+<div class="cxi-form-group error-panel">
+  <span class="icon" *ngIf="!this.messageFormGroup.valid"
+    ><i class="fa fa-exclamation-circle"></i> Validation Errors</span
+  >
+  <span class="icon" *ngIf="this.messageFormGroup.valid"
+    ><i class="fa fa-check"></i> Validation Passed</span
+  >
+  <div *ngFor="let key of objectKeys(messageObject)">
+    <p *ngFor="let validation of messageObject[key]">
+      <span *ngIf="messageFormGroup.get(key).hasError(validation.type)">{{
+        validation.message
+      }}</span>
+    </p>
+  </div>
+</div>

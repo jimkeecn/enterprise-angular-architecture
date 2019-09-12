@@ -1,0 +1,18 @@
+.cxi-layout-outer-body {
+  position: relative;
+  padding-left: 250px;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  display: flex;
+}
+
+@media only screen and (max-width: 980px) {
+  .cxi-layout-outer-body {
+    padding-left: 80px;
+    padding-top: 60px;
+  }
+}
+.cxi-layout-inner-body {
+  width: calc(100% - 30px);
+  padding: 0 15px 15px 15px;
+}

@@ -1,0 +1,57 @@
+<div class="cxi-form bg-white col-8 mg-b-10">
+  <app-et-basic-info-bar [basicInfo]="transactionInfo"></app-et-basic-info-bar>
+</div>
+
+<div class="cxi-form bg-white col-8 mg-b-10">
+  <div class="cxi-form-group">
+    <h5>
+      Distribution Payment Info
+      <i class="fas fa-chevron-down form-control" aria-label="expend form"></i>
+    </h5>
+    <div>
+      <app-cxi-banking-fields-form
+        [bankType]="'outgoing'"
+      ></app-cxi-banking-fields-form>
+    </div>
+  </div>
+</div>
+
+<div class="cxi-form bg-white col-8 mg-b-10">
+  <div class="cxi-form-group">
+    <h5>
+      Redemption Payment Info
+      <i class="fas fa-chevron-down form-control" aria-label="expend form"></i>
+    </h5>
+    <div>
+      <app-cxi-banking-fields-form
+        [bankType]="'outgoing'"
+      ></app-cxi-banking-fields-form>
+    </div>
+  </div>
+</div>
+
+<div class="cxi-form bg-white col-8 mg-b-10">
+  <div class="cxi-form-group">
+    <h5>
+      Regular Saving Plan Payment Info
+      <i class="fas fa-chevron-down form-control" aria-label="expend form"></i>
+    </h5>
+    <div>
+      <app-cxi-banking-fields-form
+        [bankType]="'incoming'"
+      ></app-cxi-banking-fields-form>
+    </div>
+  </div>
+</div>
+
+<div class="cxi-form-action col-8">
+  <button
+    mat-raised-button
+    color="primary"
+    class="pull-right"
+    (click)="navigateToCommission()"
+  >
+    Navigate to Adviser
+  </button>
+  <button mat-button class="pull-right">Save and Exit</button>
+</div>

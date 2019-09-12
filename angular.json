@@ -119,6 +119,123 @@
           }
         }
       }
+    },
+    "advisorPortal": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/advisorPortal",
+      "sourceRoot": "projects/advisorPortal/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/advisorPortal",
+            "index": "projects/advisorPortal/src/index.html",
+            "main": "projects/advisorPortal/src/main.ts",
+            "polyfills": "projects/advisorPortal/src/polyfills.ts",
+            "tsConfig": "projects/advisorPortal/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/advisorPortal/src/favicon.ico",
+              "projects/advisorPortal/src/assets"
+            ],
+            "styles": [
+              "projects/advisorPortal/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/advisorPortal/src/environments/environment.ts",
+                  "with": "projects/advisorPortal/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "advisorPortal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "advisorPortal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "advisorPortal:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/advisorPortal/src/test.ts",
+            "polyfills": "projects/advisorPortal/src/polyfills.ts",
+            "tsConfig": "projects/advisorPortal/tsconfig.spec.json",
+            "karmaConfig": "projects/advisorPortal/karma.conf.js",
+            "assets": [
+              "projects/advisorPortal/src/favicon.ico",
+              "projects/advisorPortal/src/assets"
+            ],
+            "styles": [
+              "projects/advisorPortal/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/advisorPortal/tsconfig.app.json",
+              "projects/advisorPortal/tsconfig.spec.json",
+              "projects/advisorPortal/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/advisorPortal/e2e/protractor.conf.js",
+            "devServerTarget": "advisorPortal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "advisorPortal:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "adminPortal"
 }

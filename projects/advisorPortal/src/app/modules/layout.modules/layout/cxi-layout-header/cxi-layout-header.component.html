@@ -1,0 +1,55 @@
+<div class="cxi-layout-header flex-row zindex-600 content-between">
+  <div class="cxi-layout-header-logo flex-row">
+    <img src="assets/CXi-Logo.png" style="width:80px" />
+  </div>
+  <div class="cxi-layout-header-global-search flex-row item-center">
+    <div class="cxi-layout-header-global-content" (click)="gsTurn = true">
+      <i class="fas fa-search"></i> &nbsp;
+      <span>Click here to start global search</span>
+    </div>
+    <!-- using CXI_GLOBAL_SEARCH component here -->
+    <app-cxi-global-search
+      *ngIf="gsTurn"
+      #globalSearch
+      (closeGlobalSearch)="gsTurn = $event"
+      [@ngIfFadeInOut]
+    >
+      <div class="gs-item" *ngFor="let result of globalSearch.searchResultList">
+        <div style="float:left;margin-right:20px" class="pointer">
+          <h3>{{ result.type }}</h3>
+          <h5>{{ result.value }}</h5>
+          <p>{{ result.subValue }}</p>
+        </div>
+      </div>
+    </app-cxi-global-search>
+    <!-- using CXI_GLOBAL_SEARCH component here | END-->
+  </div>
+  <div class="cxi-layout-header-profile flex-row item-center flex-end">
+    <div class="cxi-layout-profile-container">
+      <div class="cxi-profile-notification">
+        <i class="fas fa-bell"></i>
+      </div>
+      <div class="cxi-profile-name">
+        Junxi Li
+      </div>
+      <div class="cxi-profile-action">
+        <i
+          class="fas fa-user-circle"
+          (click)="profileVisible = !profileVisible"
+        ></i>
+        <div
+          class="cxi-profile-dropdown"
+          *ngIf="profileVisible"
+          [@ngIfFadeInOut]
+        >
+          <div class="option"><i class="fas fa-user"></i> Profile</div>
+          <div class="option"><i class="fas fa-user-cog"></i>Setting</div>
+          <div class="option"><i class="fas fa-question"></i> Help</div>
+          <div class="option grey" [routerLink]="['/login']">
+            Logout &nbsp;<i class="fas fa-sign-out-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
