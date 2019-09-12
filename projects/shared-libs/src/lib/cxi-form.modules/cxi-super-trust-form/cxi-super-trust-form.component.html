@@ -1,0 +1,150 @@
+<!-- <app-cxi-validation-message-form> </app-cxi-validation-message-form> -->
+<div class="cxi-form-group">
+  <h5>
+    Trust Detail
+    <i class="fas fa-chevron-down form-control" aria-label="expend form"></i>
+    <span class="cxi-aml-label invalid">
+      <i class="fa fa-user-check" aria-label="user verified"></i>
+      <i class="fas fa-user-times" aria-label="user not verified"></i> &nbsp;
+      Not Verified
+    </span>
+    <span class="cxi-aml-label">
+      <i class="fas fa-search" aria-label="search"></i> &nbsp; Search Existing
+      Trust
+    </span>
+  </h5>
+  <div class="">
+    <p class="cxi-form-block-title">
+      Trust Basic Infomation (GreenID AML Essential)
+    </p>
+    <div class="row" style="border-top:1px #ddd solid">
+      <div class="col-12 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Full Name of Trust " />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="ABN" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="TFN or Exemption Code" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Country of Establishment </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Australia</mat-option>
+            <mat-option value="NZ">New Zealand</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Trust Type</mat-label>
+          <mat-select>
+            <mat-option value="AUS">Government Superfund</mat-option>
+            <mat-option value="NZ">Self Managed Super Fund</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Tax Residence Organisation Type </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Financial Institution</mat-option>
+            <mat-option value="NZ">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="GIIN" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Fatca Status</mat-label>
+          <mat-select>
+            <mat-option value="AUS">US Financial Institution</mat-option>
+            <mat-option value="NZ">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Details (Fatca Status)" />
+        </mat-form-field>
+      </div>
+    </div>
+    <app-cxi-list-handler-rl
+      #listHandler
+      [list]="listOfTax"
+      (listChangeEvent)="taxForeignListHandler($event)"
+    >
+      <p class="cxi-form-block-title">
+        Foreign Tax Information &nbsp;
+        <i
+          class="fas fa-plus-square pointer"
+          aria-label="add-tax-foerign"
+          (click)="listHandler.addObject('')"
+        ></i>
+        <i
+          class="fas fa-cog pointer row-setting"
+          aria-label="remove-tax-foerign"
+          [ngClass]="{ on: removeSwtich, off: !removeSwtich }"
+          (click)="removeSwtich = !removeSwtich"
+        ></i>
+      </p>
+      <div
+        class="row-action"
+        [ngClass]="{ flex: removeSwtich }"
+        *ngFor="let tax of listOfTax; let i = index"
+      >
+        <div class="row" style="border-top:1px solid #ddd">
+          <div class="col-3 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <mat-label>Tax Country</mat-label>
+              <mat-select value="true">
+                <mat-option value="true">New Zealand</mat-option>
+                <mat-option value="false">Unite State</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-3 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <input matInput placeholder="TIN" />
+            </mat-form-field>
+          </div>
+          <div class="col-6 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <mat-label>Reason of No TIN</mat-label>
+              <mat-select value="true">
+                <mat-option value="true"
+                  >This Country doesn't issue TINs</mat-option
+                >
+                <mat-option value="false"
+                  >The Investor has not been issued a TIN</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div
+          class="row-action-button flex content-center item-center pointer"
+          (click)="listHandler.removeObject(1)"
+          *ngIf="removeSwtich"
+        >
+          <i class="fas fa-minus"></i>
+        </div>
+      </div>
+    </app-cxi-list-handler-rl>
+  </div>
+</div>

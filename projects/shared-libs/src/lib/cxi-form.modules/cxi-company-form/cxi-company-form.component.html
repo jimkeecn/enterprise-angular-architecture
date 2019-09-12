@@ -1,0 +1,397 @@
+<!-- <app-cxi-validation-message-form> </app-cxi-validation-message-form> -->
+<div class="cxi-form-group">
+  <h5>
+    Company Detail
+    <i class="fas fa-chevron-down form-control" aria-label="expend form"></i>
+    <span class="cxi-aml-label invalid">
+      <i class="fa fa-user-check" aria-label="user verified"></i>
+      <i class="fas fa-user-times" aria-label="user not verified"></i> &nbsp;
+      Not Verified
+    </span>
+    <span class="cxi-aml-label">
+      <i class="fas fa-search" aria-label="search"></i> &nbsp; Search Existing
+      Company
+    </span>
+  </h5>
+  <div class="">
+    <p class="cxi-form-block-title">
+      Company Basic Infomation (GreenID AML Essential)
+    </p>
+    <div class="row" style="border-top:1px #ddd solid">
+      <div class="col-12 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Company Name " />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input ">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Company Number" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="ABN" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="TFN" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Company is registered as </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Private</mat-option>
+            <mat-option value="NZ">Public</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <p class="cxi-form-block-title">
+      Company Registered Address (GreenID AML Essential)
+    </p>
+    <div class="row" style="border-top:1px #ddd solid">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Country of Formation/Registration </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Australia</mat-option>
+            <mat-option value="NZ">New Zealand</mat-option>
+            <mat-option value="US">US</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-9 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input
+            matInput
+            placeholder="Registered Address (address look up only for Australia) "
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="PO Box" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Unit / Level (eg- U 4, L 3)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Building (eg- ANZ BUILDING)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Street Number " />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Street (eg- COLLINS)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Street Type" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Suburb (eg- MELBOURNE)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="State (eg- VIC)" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Postcode (eg- 3000)" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <p class="cxi-form-block-title">
+      Company seperate principle place of business
+    </p>
+    <div class="row" style="border-top:1px #ddd solid">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Country </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Australia</mat-option>
+            <mat-option value="NZ">New Zealand</mat-option>
+            <mat-option value="US">Unite States</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-9 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <input
+            matInput
+            placeholder="Full Address (address look up only for Australia) "
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="PO Box" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Unit / Level (eg- U 4, L 3)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Building (eg- ANZ BUILDING)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Street Number " />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Street (eg- COLLINS)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Street Type" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Suburb (eg- MELBOURNE)" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="State (eg- VIC)" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Postcode (eg- 3000)" />
+        </mat-form-field>
+      </div>
+    </div>
+    <!-- <p class="cxi-form-block-title">
+            AML / KYC (Under the legislation of Australia, all investors has to be
+            verified.)
+          </p> -->
+
+    <p class="cxi-form-block-title">Company Tax Information</p>
+
+    <div class="row" style="border-top:1px solid #ddd">
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>AML Organisation Type </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Australian Listed Company</mat-option>
+            <mat-option value="NZ">Regulated</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Regulator" />
+        </mat-form-field>
+      </div>
+      <div class="col-43 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="License Number" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 cxi-input required">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Tax Residence Organisation Type </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Australian Listed Company</mat-option>
+            <mat-option value="NZ">Regulated</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="GIIN" />
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <mat-label>Fatca Status </mat-label>
+          <mat-select>
+            <mat-option value="AUS">Excepted Financial Institution</mat-option>
+            <mat-option value="NZ">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-3 cxi-input">
+        <mat-form-field class="cxi-full-width">
+          <input matInput placeholder="Details Of Other FATCA STATUS" />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row no-border">
+      <div class="col-12 cxi-radio">
+        <label>
+          Is this company a tax resident of a foreign?
+          <mat-radio-group>
+            <mat-radio-button [value]="true">Yes</mat-radio-button>
+            <mat-radio-button [value]="false">No</mat-radio-button>
+          </mat-radio-group>
+        </label>
+      </div>
+    </div>
+
+    <app-cxi-list-handler-rl
+      #listHandler
+      [list]="listOfTax"
+      (listChangeEvent)="taxForeignListHandler($event)"
+    >
+      <p class="cxi-form-block-title">
+        Foreign Tax Information &nbsp;
+        <i
+          class="fas fa-plus-square pointer"
+          aria-label="add-tax-foerign"
+          (click)="listHandler.addObject('')"
+        ></i>
+        <i
+          class="fas fa-cog pointer row-setting"
+          aria-label="remove-tax-foerign"
+          [ngClass]="{ on: removeSwtich, off: !removeSwtich }"
+          (click)="removeSwtich = !removeSwtich"
+        ></i>
+      </p>
+      <div
+        class="row-action"
+        [ngClass]="{ flex: removeSwtich }"
+        *ngFor="let tax of listOfTax; let i = index"
+      >
+        <div class="row" style="border-top:1px solid #ddd">
+          <div class="col-3 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <mat-label>Tax Country</mat-label>
+              <mat-select value="true">
+                <mat-option value="true">New Zealand</mat-option>
+                <mat-option value="false">Unite State</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-3 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <input matInput placeholder="TIN" />
+            </mat-form-field>
+          </div>
+          <div class="col-6 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <mat-label>Reason of No TIN</mat-label>
+              <mat-select value="true">
+                <mat-option value="true"
+                  >This Country doesn't issue TINs</mat-option
+                >
+                <mat-option value="false"
+                  >The Investor has not been issued a TIN</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div
+          class="row-action-button flex content-center item-center pointer"
+          (click)="listHandler.removeObject(i)"
+          *ngIf="removeSwtich"
+        >
+          <i class="fas fa-minus"></i>
+        </div>
+      </div>
+    </app-cxi-list-handler-rl>
+
+    <div class="row no-border">
+      <div class="col-12 cxi-radio">
+        <label>
+          Does this Company has any Alternate References?
+          <mat-radio-group>
+            <mat-radio-button [value]="true">Yes</mat-radio-button>
+            <mat-radio-button [value]="false">No</mat-radio-button>
+          </mat-radio-group>
+        </label>
+      </div>
+    </div>
+
+    <app-cxi-list-handler-rl
+      #listARHandler
+      [list]="listOfAR"
+      (listChangeEvent)="alterRefListHandler($event)"
+    >
+      <p class="cxi-form-block-title">
+        Investor Alternate References &nbsp;
+        <i
+          class="fas fa-plus-square pointer"
+          aria-label="add-tax-foerign"
+          (click)="listARHandler.addObject('')"
+        ></i>
+        <i
+          class="fas fa-cog pointer row-setting"
+          [ngClass]="{ on: removeARSwtich, off: !removeARSwtich }"
+          aria-label="remove-tax-foerign"
+          (click)="removeARSwtich = !removeARSwtich"
+        ></i>
+      </p>
+      <div
+        class="row-action"
+        [ngClass]="{ flex: removeARSwtich }"
+        *ngFor="let tax of listOfAR; let i = index"
+      >
+        <div class="row" style="border-top:1px solid #ddd">
+          <div class="col-4 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <mat-label>Reference Type</mat-label>
+              <mat-select value="true">
+                <mat-option value="true">Hipolio ID</mat-option>
+                <mat-option value="false">Saleforce ID</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-8 cxi-input required">
+            <mat-form-field class="cxi-full-width">
+              <input matInput placeholder="Reference" />
+            </mat-form-field>
+          </div>
+        </div>
+        <div
+          class="row-action-button flex content-center item-center pointer"
+          (click)="listARHandler.removeObject(i)"
+          *ngIf="removeARSwtich"
+        >
+          <i class="fas fa-minus"></i>
+        </div>
+      </div>
+    </app-cxi-list-handler-rl>
+  </div>
+</div>

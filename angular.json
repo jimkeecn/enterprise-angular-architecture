@@ -236,6 +236,41 @@
           }
         }
       }
+    },
+    "shared-libs": {
+      "projectType": "library",
+      "root": "projects/shared-libs",
+      "sourceRoot": "projects/shared-libs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/shared-libs/tsconfig.lib.json",
+            "project": "projects/shared-libs/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared-libs/src/test.ts",
+            "tsConfig": "projects/shared-libs/tsconfig.spec.json",
+            "karmaConfig": "projects/shared-libs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/shared-libs/tsconfig.lib.json",
+              "projects/shared-libs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "adminPortal"
 }
