@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MatDialog } from "@angular/material";
-import { CxiIndividualFormModalComponent } from "../../../cxi-form.modules/cxi-individual-form-modal/cxi-individual-form-modal.component";
+import { CxiIndividualFormModalComponent } from "shared-libs";
 
 /* FAKE DATA */
 const BENEFICIAL_OWNER_DATA = [

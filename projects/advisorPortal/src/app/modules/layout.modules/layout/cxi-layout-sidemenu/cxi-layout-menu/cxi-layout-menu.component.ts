@@ -46,16 +46,6 @@ const CXI_MENU = [
         name: "Enter Transaction",
         subIcon: "et",
         path: "app/enter-transaction/product-selection"
-      },
-      {
-        name: "Maintain Transaction",
-        subIcon: "mt",
-        path: ""
-      },
-      {
-        name: "Transfers",
-        subIcon: "Tf",
-        path: ""
       }
     ]
   },
@@ -72,16 +62,6 @@ const CXI_MENU = [
       {
         name: "Income Statement",
         subIcon: "is",
-        path: ""
-      },
-      {
-        name: "Holding Statement",
-        subIcon: "hs",
-        path: ""
-      },
-      {
-        name: "Annual Tax Statement",
-        subIcon: "ats",
         path: ""
       }
     ]
