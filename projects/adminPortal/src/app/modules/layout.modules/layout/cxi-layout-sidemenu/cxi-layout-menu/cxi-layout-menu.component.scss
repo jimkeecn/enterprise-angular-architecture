@@ -1,0 +1,51 @@
+.cxi-menu-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.cxi-menu {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  margin-block-start: none !important;
+  padding: 0;
+  overflow: auto;
+}
+
+.cxi-menu li ul {
+  list-style: none;
+  background-color: #0588c9;
+  margin: 0;
+  padding: 0;
+}
+
+.cxi-menu li {
+  height: auto;
+  min-height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.cxi-menu li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cxi-menu li a span {
+  width: 150px;
+}
+
+.cxi-menu li a:hover {
+  color: #fff;
+}
+
+.cxi-menu .sub-icon {
+  text-transform: lowercase;
+}

@@ -1,0 +1,45 @@
+.cxi-dashboard-container {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cxi-dashboard-card {
+  padding: 20px;
+  background: #fff;
+}
+
+.cxi-dashboard-card .card-title {
+  font-size: 25px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.cxi-dashboard-card .card-title .actions i {
+  background: #ddd;
+  margin-right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.cxi-dashboard-sm-card {
+  width: 300px;
+  padding: 20px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.cxi-dashboard-sm-card .card-body {
+  font-size: 25px;
+  font-weight: 400;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cxi-dashboard-sm-card .card-body .sm {
+  font-size: 15px;
+  margin-top: 10px;
+}

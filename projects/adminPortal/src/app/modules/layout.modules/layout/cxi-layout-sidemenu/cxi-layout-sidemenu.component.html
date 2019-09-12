@@ -1,0 +1,65 @@
+<div class="cxi-layout-body-menu zindex-500 flex-column">
+  <div
+    class="cxi-menu-minified"
+    (click)="minifiedMenuVisible = !minifiedMenuVisible"
+  >
+    <i class="fas fa-compass" style="margin-right:10px"></i>
+    <i class="fas fa-chevron-down" *ngIf="!minifiedMenuVisible"></i>
+    <i class="fas fa-chevron-up" *ngIf="minifiedMenuVisible"></i>
+  </div>
+  <div
+    class="cxi-menu-minified-menu"
+    [@ngIfMinifiedMenu]
+    *ngIf="minifiedMenuVisible"
+  >
+    <div class="minified-menu-button-category">
+      You Were Here:
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">ET</span
+      ><span class="title">Enter Transaction</span>
+    </div>
+    <div class="minified-menu-button-category">
+      Your Personal Preferences:
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">IE</span
+      ><span class="title">Investor Enquiry</span>
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">MI</span
+      ><span class="title">maintain Investor</span>
+    </div>
+    <div class="minified-menu-button-category">
+      User Button:
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">IE</span
+      ><span class="title">Investor Enquiry</span>
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">ET</span
+      ><span class="title">Enter Transaction</span>
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">MP</span
+      ><span class="title">maintain product</span>
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">MF</span
+      ><span class="title">maintain fund</span>
+    </div>
+    <div class="minified-menu-button-category">
+      Role Button:
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">IE</span
+      ><span class="title">Investor Enquiry</span>
+    </div>
+    <div class="minified-menu-button">
+      <span class="short-title">AE</span
+      ><span class="title">account Enquiry</span>
+    </div>
+  </div>
+  <app-cxi-layout-menu></app-cxi-layout-menu>
+</div>

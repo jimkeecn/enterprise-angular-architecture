@@ -1,0 +1,130 @@
+<form class="flex-column col-8 mg-t-20" [formGroup]="productSelectionFormGroup">
+  <div class="cxi-form bg-white">
+    <app-cxi-validation-message-form
+      *ngIf="
+        !this.productSelectionFormGroup.valid &&
+        productSelectionFormGroupValidationMsg
+      "
+      [messageObject]="productSelectionFormGroupErrorMessage"
+      [messageFormGroup]="productSelectionFormGroup"
+    >
+    </app-cxi-validation-message-form>
+    <div class="cxi-form-group">
+      <div class="row">
+        <div class="col-6 cxi-input required">
+          <mat-form-field class="cxi-full-width">
+            <mat-label>Please select a product</mat-label>
+            <mat-select
+              formControlName="product"
+              (selectionChange)="
+                selectProduct(productSelectionFormGroup.get('product').value)
+              "
+            >
+              <mat-option value="Cxiregistry International Fund"
+                >Cxiregistry International Fund</mat-option
+              >
+              <mat-option value="Cxiregistry Domestic Fund"
+                >Cxiregistry Domestic Fund</mat-option
+              >
+              <mat-option value="Bennelonng International Fund"
+                >Bennelonng International Fund</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-6 cxi-input ">
+          <mat-form-field class="cxi-full-width">
+            <input matInput placeholder="Issuer" formControlName="issuer" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 cxi-input required">
+          <mat-form-field class="cxi-full-width">
+            <input
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Choose a Received Date (dd/mm/yyyy)"
+              autocomplete="off"
+              formControlName="receivedDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row no-border">
+        <div class="col-12 cxi-radio">
+          <label>
+            Is this a new account?
+            <mat-radio-group
+              aria-label="Select an option"
+              formControlName="isNewAccount"
+            >
+              <mat-radio-button [value]="true">New Account</mat-radio-button>
+              <mat-radio-button [value]="false"
+                >Existing Account</mat-radio-button
+              >
+            </mat-radio-group>
+          </label>
+        </div>
+      </div>
+      <div
+        class="row"
+        *ngIf="productSelectionFormGroup.get('isNewAccount').value == true"
+      >
+        <div class="col-12 cxi-input required">
+          <mat-form-field class="cxi-full-width">
+            <mat-label>Please select an account type </mat-label>
+            <mat-select formControlName="accountType">
+              <mat-option value="1">Individual</mat-option>
+              <mat-option value="2">Company</mat-option>
+              <mat-option value="3">Joint Account</mat-option>
+              <mat-option value="4">Trust</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div
+        class="row"
+        *ngIf="productSelectionFormGroup.get('isNewAccount').value == false"
+      >
+        <div class="col-12 cxi-input required">
+          <mat-form-field class="cxi-full-width">
+            <input
+              type="text"
+              placeholder="Please Search an account"
+              aria-label="Number"
+              matInput
+              [matAutocomplete]="auto"
+              formControlName="accountSelected"
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option>
+                A1100045 Junxi Li
+              </mat-option>
+              <mat-option>
+                A1100053 Yuqi Wei
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cxi-form-action">
+    <button
+      mat-raised-button
+      color="primary"
+      class="pull-right"
+      (click)="next()"
+      [disabled]="!formReady"
+    >
+      Investor Detail
+    </button>
+    <button mat-button class="pull-right">Cancel this transaction</button>
+  </div>
+</form>

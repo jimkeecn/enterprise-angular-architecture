@@ -1,0 +1,31 @@
+<div class="cxi-global-search-container">
+  <i
+    class="fas fa-times cxi-global-close"
+    aria-label="close-global-search"
+    (click)="closeGS()"
+  ></i>
+  <div class="cgs-logo">
+    <img src="assets/CXi-Logo.png" />
+  </div>
+  <div class="search-field">
+    <form [formGroup]="searchForm">
+      <input
+        type="text"
+        placeholder="Search..."
+        autofocus
+        formControlName="searchTerm"
+      />
+    </form>
+  </div>
+  <div class="suggestions">
+    <p>
+      Suggestions : <span>John Smith,</span>
+      <span>John Smith & Markhom Lee,</span> <span>John Lee,</span>
+    </p>
+  </div>
+  <div class="search-result-container">
+    <h5>Page Search Result:</h5>
+    <p *ngIf="searchResultListNone === true">We found nothing.</p>
+    <ng-content></ng-content>
+  </div>
+</div>

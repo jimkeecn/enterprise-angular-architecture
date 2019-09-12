@@ -1,0 +1,26 @@
+<div class="cxi-menu-container">
+  <ul class="cxi-menu">
+    <li *ngFor="let menu of cxiMenu">
+      <a (click)="menu.openMenu = !menu.openMenu; navigate(menu.path)">
+        <span>{{ menu.name }}</span>
+        <i
+          class="fas"
+          *ngIf="menu.chidren.length > 0"
+          [ngClass]="{
+            'fa-chevron-left': menu.openMenu === false,
+            'fa-chevron-down': menu.openMenu === true
+          }"
+        ></i>
+        <i [ngClass]="menu.icon"></i>
+      </a>
+      <ul [@toggleHeight] *ngIf="menu.openMenu">
+        <li *ngFor="let subMenu of menu.chidren">
+          <a (click)="navigate(subMenu.path)"
+            ><span>{{ subMenu.name }}</span
+            ><i class="sub-icon">{{ subMenu.subIcon }}</i></a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

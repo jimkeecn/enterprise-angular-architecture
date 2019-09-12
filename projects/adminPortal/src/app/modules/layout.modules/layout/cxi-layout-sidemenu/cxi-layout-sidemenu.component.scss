@@ -1,0 +1,81 @@
+.cxi-layout-body-menu {
+  background: #0094de;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 980px) {
+  .cxi-layout-body-menu {
+    width: 250px;
+    padding-top: 60px;
+  }
+}
+.cxi-menu-minified {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background: #007fbe;
+  color: #9dc9df;
+  cursor: pointer;
+  position: relative;
+  z-index: 999;
+}
+
+.cxi-menu-minified-menu {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  background: #007fbe;
+  padding-bottom: 20px;
+  overflow: hidden;
+  height: calc(100% - 100px);
+  z-index: 888;
+}
+.minified-menu-button-category {
+  width: calc(100% - 20px);
+  font-size: 11px;
+  color: #fff;
+  float: left;
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+.minified-menu-button {
+  position: relative;
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  background-color: #0094de;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.minified-menu-button span.short-title {
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  margin-top: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.minified-menu-button span.title {
+  font-size: 11px;
+  width: 80px;
+  display: block;
+  text-align: center;
+  background: rgb(0, 148, 222, 0.7);
+  text-transform: capitalize;
+}

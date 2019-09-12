@@ -1,1 +1,459 @@
+@import "../../../node_modules/angular-notifier/styles.css";
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$cxiregistry-ui-primary: mat-palette($mat-indigo);
+$cxiregistry-ui-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$cxiregistry-ui-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$cxiregistry-ui-theme: mat-light-theme(
+  $cxiregistry-ui-primary,
+  $cxiregistry-ui-accent,
+  $cxiregistry-ui-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($cxiregistry-ui-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.col-1 {
+  width: 8.33%;
+  height: auto;
+  float: left;
+}
+
+.col-2 {
+  width: 16.66%;
+  height: auto;
+  float: left;
+}
+.col-3 {
+  width: 24.99%;
+  height: auto;
+  float: left;
+}
+.col-4 {
+  width: 33.33%;
+  height: auto;
+  float: left;
+}
+.col-5 {
+  width: 41.65%;
+  height: auto;
+  float: left;
+}
+.col-6 {
+  width: 50%;
+  height: auto;
+  float: left;
+}
+.col-7 {
+  width: 58.31%;
+  height: auto;
+  float: left;
+}
+.col-8 {
+  width: 66.64%;
+  height: auto;
+  float: left;
+}
+.col-9 {
+  width: 75%;
+  height: auto;
+  float: left;
+}
+.col-10 {
+  width: 83.3%;
+  height: auto;
+  float: left;
+}
+.col-11 {
+  width: 91.65%;
+  height: auto;
+  float: left;
+}
+.col-12 {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+@media only screen and (max-width: 980px) {
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-10,
+  .col-11,
+  .col-12 {
+    width: 100%;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.content-between {
+  justify-content: space-between;
+}
+
+.item-center {
+  align-items: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.zindex-100 {
+  z-index: 100;
+}
+
+.zindex-200 {
+  z-index: 200;
+}
+
+.zindex-300 {
+  z-index: 300;
+}
+
+.zindex-400 {
+  z-index: 400;
+}
+
+.zindex-500 {
+  z-index: 500;
+}
+
+.zindex-600 {
+  z-index: 600;
+}
+
+.bg-white {
+  background: #ffffff;
+}
+
+.mg-b-10 {
+  margin-bottom: 10px;
+}
+
+.mg-b-20 {
+  margin-bottom: 20px;
+}
+
+.mg-t-10 {
+  margin-top: 10px;
+}
+
+.mg-t-20 {
+  margin-top: 20px;
+}
+.no-border-top {
+  border-top: none !important;
+}
+
+.no-border-left {
+  border-left: none !important;
+}
+.no-border-right {
+  border-right: none !important;
+}
+
+.no-border-bottom {
+  border-bottom: none !important;
+}
+/* Cxi Element Style */
+
+.cxi-form {
+  /* This is basic cxi form , all form has to follow this style...*/
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 1441px) {
+  .cxi-form,
+  .cxi-form-action {
+    width: calc(100% - 50px) !important;
+  }
+}
+.cxi-input {
+  display: flex;
+}
+
+.cxi-full-width {
+  width: 100%;
+}
+.row {
+  width: 100%;
+  float: left;
+}
+.row-action {
+  width: 100%;
+  float: left;
+  position: relative;
+}
+
+.row-action .row-action-button {
+  width: 50px;
+  height: 53.5px;
+  background: rgb(204, 57, 57, 0.7);
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.row-action .row-action-button:hover {
+  background: rgb(204, 57, 57, 1);
+}
+
+.cxi-form-group p.cxi-form-block-title {
+  font-size: 11px;
+  font-weight: 300;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 0.8px;
+  position: relative;
+  float: left;
+}
+
+.cxi-form-group p.cxi-form-block-title i:nth-child(2) {
+  margin-left: 15px;
+}
+
+.cxi-form-group p.cxi-form-block-title:not(:first-child) {
+  margin-top: 10px;
+}
+
+.cxi-form-group h5 {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.cxi-form-group.error-panel {
+  background-color: rgb(204, 57, 57);
+  color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.cxi-form-group h5 .cxi-aml-label {
+  position: relative;
+  float: right;
+  border: solid #ddd 1px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  top: -5px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.cxi-form-group .mat-table .cxi-aml-label {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.cxi-form-group h5 i.form-control {
+  position: relative;
+  float: right;
+  top: 0px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.cxi-form-group h5 .cxi-aml-label.invalid,
+.cxi-form-group .mat-table .cxi-aml-label.invalid {
+  background-color: rgb(204, 57, 57);
+  color: #fff;
+}
+
+.cxi-form-group h5 .cxi-aml-label.valid,
+.cxi-form-group .mat-table .cxi-aml-label.valid {
+  background-color: rgb(72, 204, 55);
+  color: #fff;
+}
+
+.cxi-form-group.error-panel.error-pass {
+  background-color: rgb(72, 204, 55) !important;
+}
+.cxi-form-action {
+  padding: 15px 20px;
+}
+
+.cxi-form-action button {
+  margin-left: 12px;
+}
+
+.row-setting.on {
+  opacity: 1;
+}
+
+.row-setting.off {
+  opacity: 0.5;
+}
+
+.cxi-radio {
+  padding: 12px 0;
+}
+.pointer {
+  cursor: pointer;
+}
+/* angular material to flat */
+.cdk-overlay-pane {
+  overflow: auto;
+}
+
+.cxi-input.required .mat-form-field::after {
+  color: #f35958;
+  content: "*";
+  font-family: arial;
+  font-size: 20px;
+  position: absolute;
+  right: 12px;
+  top: 6px;
+}
+
+.cxi-input .mat-form-field .mat-form-field-flex {
+  border: solid 1px #ddd !important;
+  padding: 6px 12px 0 12px !important;
+}
+
+.cxi-input.error .mat-form-field-appearance-legacy .mat-form-field-underline {
+  border-bottom: solid 2px rgb(204, 57, 57) !important;
+}
+
+.cxi-input .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+@media only screen and (min-width: 980px) {
+  .cxi-form-group .row:not(:nth-child(1)) .cxi-input .mat-form-field-flex {
+    border-top: transparent !important;
+  }
+  .cxi-form-group .cxi-input:not(:nth-child(1)) .mat-form-field-flex {
+    border-left: transparent !important;
+  }
+}
+.cxi-input .mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: 0 !important;
+  background-color: #ddd;
+}
+
+.row.no-border + .row {
+  //important for row that has top border after an no border row element..
+  border-top: solid 1px #ddd;
+}
+
+.cxi-input .mat-form-field-should-float {
+  background-color: #fbfbfb;
+}
+
+.cxi-input
+  .mat-form-field-appearance-legacy.mat-form-field-disabled
+  .mat-form-field-underline {
+  background-image: none;
+}
+
+.cxi-radio .mat-radio-button {
+  margin-left: 10px;
+}
+
+.cxi-radio .mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #0094de;
+}
+
+.cxi-radio
+  .mat-radio-button.mat-accent.mat-radio-checked
+  .mat-radio-outer-circle {
+  border-color: #0094de;
+}
+
+.mat-calendar-body-selected {
+  background-color: #0094de;
+}
+
+.mat-table-border {
+  border-top: solid 1px #ddd;
+  border-left: solid 1px #ddd;
+  border-right: solid 1px #ddd;
+}
+.mat-table-action i {
+  margin-right: 15px;
+  font-size: 15px;
+}
+
+.notifier__container {
+  position: absolute;
+}
