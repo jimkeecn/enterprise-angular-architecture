@@ -2,5 +2,123 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "adminPortal": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/adminPortal",
+      "sourceRoot": "projects/adminPortal/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/adminPortal",
+            "index": "projects/adminPortal/src/index.html",
+            "main": "projects/adminPortal/src/main.ts",
+            "polyfills": "projects/adminPortal/src/polyfills.ts",
+            "tsConfig": "projects/adminPortal/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/adminPortal/src/favicon.ico",
+              "projects/adminPortal/src/assets"
+            ],
+            "styles": [
+              "projects/adminPortal/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/adminPortal/src/environments/environment.ts",
+                  "with": "projects/adminPortal/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "adminPortal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "adminPortal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "adminPortal:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/adminPortal/src/test.ts",
+            "polyfills": "projects/adminPortal/src/polyfills.ts",
+            "tsConfig": "projects/adminPortal/tsconfig.spec.json",
+            "karmaConfig": "projects/adminPortal/karma.conf.js",
+            "assets": [
+              "projects/adminPortal/src/favicon.ico",
+              "projects/adminPortal/src/assets"
+            ],
+            "styles": [
+              "projects/adminPortal/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/adminPortal/tsconfig.app.json",
+              "projects/adminPortal/tsconfig.spec.json",
+              "projects/adminPortal/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/adminPortal/e2e/protractor.conf.js",
+            "devServerTarget": "adminPortal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "adminPortal:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "adminPortal"
 }
