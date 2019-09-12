@@ -2,9 +2,9 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { EnterTransactionRoutingModule } from "./enter-transaction.routing.model";
 
-import { SharedModule } from "./../share.modules/shared.module";
+import { SharedModule } from "shared-libs";
 import { EtBasicInfoBarComponent } from "./enter-transaction/shared/et-basic-info-bar/et-basic-info-bar.component";
-import { CxiFormModule } from "../cxi-form.modules/cxi-form.module";
+import { CxiFormModule } from "shared-libs";
 import { InvestorCompanyComponent } from "./enter-transaction/investor-company/investor-company.component";
 import { InvestorJointComponent } from "./enter-transaction/investor-joint/investor-joint.component";
 import { InvestorTrustComponent } from "./enter-transaction/investor-trust/investor-trust.component";

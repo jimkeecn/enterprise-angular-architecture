@@ -32,7 +32,9 @@ import { CxiGlobalSearchComponent } from "./cxi-global-search/cxi-global-search.
     CxiValidationMessageFormComponent,
     CxiIndividualFormComponent,
     CxiListHandlerComponent,
+    CxiIndividualFormModalComponent,
     CxiCompanyFormComponent,
+    CxiCompanyFormModalComponent,
     CxiSuperTrustFormComponent,
     CxiBankingFieldsFormComponent,
     CxiGlobalSearchComponent
