@@ -3,7 +3,19 @@
 </div>
 
 <div class="cxi-form bg-white col-8 mg-b-10">
-  <app-cxi-individual-form></app-cxi-individual-form>
+  <app-cxi-validation-message-form
+    *ngIf="
+      primaryInvestorDetailValidationTurnOn && primaryInvestorDetailValidation
+    "
+    [messageObject]="primaryInvestorDetailValidation"
+    [messageFormGroup]="primaryInvestorDetailFormGroup"
+  >
+  </app-cxi-validation-message-form>
+  <app-cxi-individual-form
+    #individualFB
+    (validationMessageEmit)="handleValidationEmitter($event)"
+    (formGroupEmit)="handleFormGroupEmitter($event)"
+  ></app-cxi-individual-form>
 </div>
 
 <div class="cxi-form bg-white col-8 mg-b-10">

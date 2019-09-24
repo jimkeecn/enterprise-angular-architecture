@@ -10,7 +10,7 @@ import { CxiCompanyFormModalComponent } from "./cxi-company-form-modal/cxi-compa
 import { CxiSuperTrustFormComponent } from "./cxi-super-trust-form/cxi-super-trust-form.component";
 import { CxiBankingFieldsFormComponent } from "./cxi-banking-fields-form/cxi-banking-fields-form.component";
 import { CxiGlobalSearchComponent } from "./cxi-global-search/cxi-global-search.component";
-import { CxiIndividualFormBsrcComponent } from './cxi-individual-form-bsrc/cxi-individual-form-bsrc.component';
+import { CxiIndividualFormBsrcComponent } from "./cxi-individual-form-bsrc/cxi-individual-form-bsrc.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { CxiIndividualFormBsrcComponent } from './cxi-individual-form-bsrc/cxi-i
     CxiSuperTrustFormComponent,
     CxiBankingFieldsFormComponent,
     CxiGlobalSearchComponent,
+    CxiIndividualFormBsrcComponent,
     CxiIndividualFormBsrcComponent
   ],
   entryComponents: [
@@ -39,7 +40,8 @@ import { CxiIndividualFormBsrcComponent } from './cxi-individual-form-bsrc/cxi-i
     CxiCompanyFormModalComponent,
     CxiSuperTrustFormComponent,
     CxiBankingFieldsFormComponent,
-    CxiGlobalSearchComponent
+    CxiGlobalSearchComponent,
+    CxiIndividualFormBsrcComponent
   ]
 })
 export class CxiFormModule {}

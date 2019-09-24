@@ -17,13 +17,6 @@ export function mapValidationMessage(
       newMessage
     );
     return mappedObject;
-    // for(var prop in newMessage){
-    //     if(oldMessage.hasOwnProperty(prop)){
-    //         oldMessage[prop] = newMessage[prop];
-    //     }else{
-    //         oldMessage
-    //     }
-    // }
   } else {
     return oldMessage;
   }

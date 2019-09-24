@@ -28,11 +28,32 @@ import {
 })
 export class CxiIndividualFormBsrcComponent
   implements OnInit, OnDestroy, AfterViewInit {
-  @Input() data: any;
-
-  /* Overwrite or extending the existing validation rules */
+  /**
+   * A Standard Angular Input Decorator.
+   * Replace or remove default validation message <individualFormGroupValidationMessage> or Adding more type into validation message.
+   *
+   * e.g.
+   * replace the firstName Message and add one more error type message with the below message.
+   * ```ts
+   * this.validationMessageOptions = {
+   *   firstName: [
+   *     {
+   *       type: "required",
+   *       message: "First Name is Required for Advisor Portal!!"
+   *     },
+   *    {
+   *       type: "alphabetOnly",
+   *       message: "First Name Only Allow English Letters."
+   *     }
+   *   ]
+   * };
+   * ```
+   *
+   * @param   validationMessage - IValidationOuterMessage
+   * @returns $event - IValidationOuterMessage
+   *
+   */
   @Input()
-  validationMessage?: IValidationOuterMessage = null;
   set setValidationMessage(validationMessage: IValidationOuterMessage) {
     this.individualFormGroupValidationMessage = mapValidationMessage(
       validationMessage,
@@ -40,32 +61,31 @@ export class CxiIndividualFormBsrcComponent
     );
     this.validationMessageEmit.emit(this.individualFormGroupValidationMessage);
   }
-  /* Add Controls into FormGroup
-     Cautious !!!!
-     Please make sure the validation message are paired with new Control with validation.
-  */
-  @Input()
-  moreControls?: FormControl[] = null;
-  set addControls(moreControls: FormControl[]) {
-    if (moreControls && moreControls.length > 0) {
-      moreControls.forEach(ctr => {
-        this.individualFormGroup.addControl(ctr.value, new FormControl());
-      });
-    }
-  }
 
-  /* Remove Controls into FormGroup */
-  @Input()
-  lessControls?: FormControl[] = null;
-  set removedControls(moreControls: FormControl[]) {
-    if (moreControls && moreControls.length > 0) {
-      moreControls.forEach(ctr => {
-        this.individualFormGroup.removeControl(ctr.value);
-      });
-    }
-  }
+  /**
+   *
+   * A Standard Angular Output Decorator.
+   * Emit a FormGroup to parent component for validate trigger purpose.
+   *
+   * @remarks
+   * This method is an UI extension of cxi business logic component <cxi-individual-form-bsrc>
+   *
+   * @returns $event : FormGroup
+   *
+   */
 
   @Output() formGroupEmit? = new EventEmitter<FormGroup>();
+
+  /**
+   * A Standard Angular Output Decorator.
+   * Emit a ValidationMessage to parent component for validation purpose.
+   *
+   * @remarks
+   * This method is an UI extension of cxi business logic component <cxi-individual-form-bsrc>
+   *
+   * @returns $event : IValidationOuterMessage
+   *
+   */
 
   @Output() validationMessageEmit? = new EventEmitter<
     IValidationOuterMessage
@@ -89,10 +109,18 @@ export class CxiIndividualFormBsrcComponent
   });
 
   public individualFormGroupValidationMessage: IValidationOuterMessage = {
-    firstName: [{ type: "required", message: "First Name is required." }],
-    lastName: [{ type: "required", message: "First Name is required." }],
-    dob: [{ type: "required", message: "First Name is required." }],
-    fullAddress: [{ type: "required", message: "First Name is required." }]
+    firstName: [
+      { type: "required", message: "First Name is required (library)." }
+    ],
+    lastName: [
+      { type: "required", message: "Last Name is required (library)." }
+    ],
+    dob: [
+      { type: "required", message: "Date of Birth is required (library)." }
+    ],
+    fullAddress: [
+      { type: "required", message: "Address is required (library)." }
+    ]
   };
 
   constructor(private fb: FormBuilder) {}

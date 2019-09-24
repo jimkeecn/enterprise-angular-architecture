@@ -4,6 +4,11 @@ import { EnterTransactionDataService } from "./../../enter-transaction.data.serv
 import { SubSink } from "subsink";
 import { MatDialog } from "@angular/material";
 import { CxiIndividualFormModalComponent } from "shared-libs";
+import {
+  IIndividualEntity,
+  IValidationOuterMessage
+} from "shared-libs/public-api";
+import { FormGroup } from "@angular/forms";
 
 /* FAKE DATA */
 const BENEFICIAL_OWNER_DATA = [
@@ -41,6 +46,15 @@ export class InvestorDetailComponent implements OnInit, OnDestroy {
     "action"
   ];
   dataSource = BENEFICIAL_OWNER_DATA;
+
+  primaryInvestorDetail: IIndividualEntity;
+  primaryInvestorDetailValidation: IValidationOuterMessage;
+  primaryInvestorDetailValidationTurnOn: boolean = false;
+  primaryInvestorDetailFormGroup: FormGroup;
+
+  /* Customize the validation Message for it's need */
+  validationMessageOptions: IValidationOuterMessage = null;
+
   constructor(
     private route: Router,
     private activeRoute: ActivatedRoute,
@@ -59,6 +73,16 @@ export class InvestorDetailComponent implements OnInit, OnDestroy {
   }
   /* Angular Life Cycle Block */
 
+  handleValidationEmitter(validationMsg: IValidationOuterMessage) {
+    this.primaryInvestorDetailValidation = validationMsg;
+    console.log(this.primaryInvestorDetailValidation);
+  }
+
+  handleFormGroupEmitter(individualFormGroup: FormGroup) {
+    this.primaryInvestorDetailFormGroup = individualFormGroup;
+    console.log(this.primaryInvestorDetailFormGroup);
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(CxiIndividualFormModalComponent, {
       width: "80vw",
@@ -72,10 +96,16 @@ export class InvestorDetailComponent implements OnInit, OnDestroy {
   }
 
   navigateToBankingDetail(): void {
-    this.route.navigate([
-      "/app/enter-transaction/banking-detail",
-      "T300012",
-      true
-    ]);
+    this.primaryInvestorDetailFormGroup.markAllAsTouched();
+    this.primaryInvestorDetailValidationTurnOn = true;
+    if (this.primaryInvestorDetailFormGroup.valid) {
+      this.route.navigate([
+        "/app/enter-transaction/banking-detail",
+        "T300012",
+        true
+      ]);
+    } else {
+      return;
+    }
   }
 }
