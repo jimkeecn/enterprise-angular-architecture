@@ -1,7 +1,7 @@
 <div class="component-container" >
     <div class="component-action">
         <input type="text" placeholder="write your name here" [(ngModel)]="name">
-        <button type="button" (click)="submitted = true">Submit</button>
+        <button type="button" id="submitName" (click)="submitted = true">Submit</button>
     </div>
     <ng-container *ngIf="submitted">
         <h5 class="component-h5" >
@@ -10,7 +10,7 @@
         <p class="component-p" >
             Please click below button to verify yourself.
         </p>
-        <button type="button" (click)="validateFn()">Verify</button>
+        <button type="button" id="verifyName" (click)="validateFn()">Verify</button>
     </ng-container>
     
 </div>

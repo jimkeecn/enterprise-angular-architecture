@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output ,EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output ,EventEmitter, TemplateRef, ViewChild} from '@angular/core';
 import { ApiService } from './api.service';
 
 
@@ -11,6 +11,7 @@ export class WelcomePageComponent implements OnInit {
   @Output() validate = new EventEmitter<any>();
 
   submitted:boolean =false;
+
   name:string = '';
   constructor(public apiService : ApiService) { }
 
