@@ -17,9 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name : Install Dependencies
     - run: npm install -g @angular/cli && npm install
-    - name : Building
     - run: ng test shared-web-components --watch=false && ng build shared-web-components --prod --output-hashing none && node build-element.js
       env:
         CI: true
