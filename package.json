@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:elements":"ng test shared-web-components --watch=false && ng build shared-web-components --prod --output-hashing none && node build-element.js"
+    "build:elements": "ng test shared-web-components --watch=false && ng build shared-web-components --prod --output-hashing none && node build-element.js"
   },
   "private": true,
   "dependencies": {
@@ -30,8 +30,10 @@
     "@webcomponents/webcomponentsjs": "^2.4.0",
     "angular-material-source": "github:angular/material",
     "angular-notifier": "^4.1.1",
+    "aws-sdk": "^2.599.0",
     "chart.js": "^2.8.0",
     "document-register-element": "^1.7.2",
+    "fs": "0.0.1-security",
     "hammerjs": "^2.0.8",
     "moment": "^2.24.0",
     "ng2-charts": "^2.3.0",
