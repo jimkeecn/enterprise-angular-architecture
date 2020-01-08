@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x, 12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -17,10 +17,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm install -g @angular/cli
-    - run: ng test shared-web-components --watch=false
-    - run: ng build shared-web-components --prod --output-hashing none 
-    - run: node build-element.js
+    - name : Install Dependencies
+    - run: npm install -g @angular/cli && npm install
+    - name : Building
+    - run: ng test shared-web-components --watch=false && ng build shared-web-components --prod --output-hashing none && node build-element.js
       env:
         CI: true
