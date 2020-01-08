@@ -271,6 +271,119 @@
           }
         }
       }
+    },
+    "shared-web-components": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/shared-web-components",
+      "sourceRoot": "projects/shared-web-components/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/shared-web-components",
+            "index": "projects/shared-web-components/src/index.html",
+            "main": "projects/shared-web-components/src/main.ts",
+            "polyfills": "projects/shared-web-components/src/polyfills.ts",
+            "tsConfig": "projects/shared-web-components/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/shared-web-components/src/favicon.ico",
+              "projects/shared-web-components/src/assets"
+            ],
+            "styles": [
+              "projects/shared-web-components/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/shared-web-components/src/environments/environment.ts",
+                  "with": "projects/shared-web-components/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "shared-web-components:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "shared-web-components:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "shared-web-components:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared-web-components/src/test.ts",
+            "polyfills": "projects/shared-web-components/src/polyfills.ts",
+            "tsConfig": "projects/shared-web-components/tsconfig.spec.json",
+            "karmaConfig": "projects/shared-web-components/karma.conf.js",
+            "assets": [
+              "projects/shared-web-components/src/favicon.ico",
+              "projects/shared-web-components/src/assets"
+            ],
+            "styles": [
+              "projects/shared-web-components/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/shared-web-components/tsconfig.app.json",
+              "projects/shared-web-components/tsconfig.spec.json",
+              "projects/shared-web-components/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/shared-web-components/e2e/protractor.conf.js",
+            "devServerTarget": "shared-web-components:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "shared-web-components:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "adminPortal"
 }
