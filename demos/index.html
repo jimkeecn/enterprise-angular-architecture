@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Component</title>
+</head>
+<body>
+
+    <shared-welcome-page></shared-welcome-page>
+    <script src="elements.js"></script>
+    <div style="padding:20px;"></div>
+    <h5>Your result:</h5>
+    <div style="padding:20px;background:#333;color:#f2f2f2" id="result">
+
+    </div>
+    <script type='text/javascript'>
+        const component = document.querySelector('shared-welcome-page');
+        component.addEventListener('validate',(event)=>{
+            console.log(event);
+            if(event){
+                document.getElementById('result').innerHTML = JSON.stringify(event.detail);
+            }
+        })
+    </script>
+</body>
+</html>

@@ -5,13 +5,14 @@
     </div>
     <ng-container *ngIf="submitted">
         <h5 class="component-h5" >
-            Hi {{ name }}, Welcome to your first shared web component.
+            Hi {{ name }}, Welcome to Green ID.
         </h5>
         <p class="component-p" >
-            Inject this web component to anywhere you like.
+            Please click below button to verify yourself.
         </p>
+        <button type="button" (click)="validateFn()">Verify</button>
     </ng-container>
-   
+    
 </div>
 
 
