@@ -15,11 +15,14 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [],
+  entryComponents:[WelcomePageComponent]
 })
 export class AppModule { 
-  constructor(injector:Injector){
-    const welcomePageWebComponent = createCustomElement(WelcomePageComponent,{injector:injector})
+  constructor(public injector:Injector){
+ 
+  }
+  ngDoBootstrap() {
+    const welcomePageWebComponent = createCustomElement(WelcomePageComponent,{injector:this.injector})
     customElements.define('shared-welcome-page',welcomePageWebComponent)
   }
-  ngDoBootstrap() {}
 }
