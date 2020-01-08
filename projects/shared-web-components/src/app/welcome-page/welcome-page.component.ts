@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output ,EventEmitter} from '@angular/core';
+import { ApiService } from './api.service';
 
 
 @Component({
@@ -11,20 +12,17 @@ export class WelcomePageComponent implements OnInit {
 
   submitted:boolean =false;
   name:string = '';
-  constructor() { }
+  constructor(public apiService : ApiService) { }
 
   ngOnInit() {
   }
 
   validateFn(){
     if(this.name){
-      const validateObj = {
-        name:this.name.toLowerCase(),
-        date:new Date(),
-        status:'Success'
-      }
-      console.log('got name',validateObj)
-      this.validate.emit(validateObj);
+      this.apiService.getTodos().subscribe(todo =>{
+        console.log('got todo',todo)
+        this.validate.emit(todo);
+      })
     }else{
       alert('please write your name again');
       this.submitted = false;

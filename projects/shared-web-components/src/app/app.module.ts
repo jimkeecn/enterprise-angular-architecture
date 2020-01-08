@@ -5,6 +5,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 import {createCustomElement} from '@angular/elements';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   entryComponents:[WelcomePageComponent]
