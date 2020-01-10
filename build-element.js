@@ -22,8 +22,8 @@ const AWS = require("aws-sdk");
     }
 
     // Enter copied or downloaded access ID and secret key here
-    const ID = "";
-    const SECRET = "";
+    const ID = "AKIA5XE4A2";
+    const SECRET = "HEFQeFElvMsgzzBeiOUSFWq3HegGWj3I781fmvf+";
     const BUCKET_NAME = "unime-static-file";
     if (!ID && SECRET) {
       console.error("AWS credential is not setup properly.");
