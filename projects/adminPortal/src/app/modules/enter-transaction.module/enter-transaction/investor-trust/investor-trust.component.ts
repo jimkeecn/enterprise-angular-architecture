@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { EnterTransactionDataService } from "../../enter-transaction.data.service";
 import { MatDialog } from "@angular/material";
-import { CxiIndividualFormModalComponent } from "shared-libs";
-import { CxiCompanyFormModalComponent } from "shared-libs";
+import { CxiIndividualFormModalComponent } from "projects/shared-libs/src/lib/cxi-form.modules/cxi-individual-form-modal/cxi-individual-form-modal.component";
+import { CxiCompanyFormModalComponent } from "projects/shared-libs/src/lib/cxi-form.modules/cxi-company-form-modal/cxi-company-form-modal.component";
 /* FAKE DATA */
 const BENEFICIAL_OWNER_DATA = [
   {

@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { LoginRegisterRoutingModule } from "./login-register.routing.module";
 import { CxiLoginComponent } from "./cxi-login/cxi-login.component";
 import { CxiRegisterComponent } from "./cxi-register/cxi-register.component";
-import { SharedModule } from "shared-libs";
+import { SharedModule } from "projects/shared-libs/src/lib/share.modules/shared.module";
 
 @NgModule({
   declarations: [CxiLoginComponent, CxiRegisterComponent],

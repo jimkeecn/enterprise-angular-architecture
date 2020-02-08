@@ -3,12 +3,10 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { EnterTransactionDataService } from "./../../enter-transaction.data.service";
 import { SubSink } from "subsink";
 import { MatDialog } from "@angular/material";
-import { CxiIndividualFormModalComponent } from "shared-libs";
-import {
-  IIndividualEntity,
-  IValidationOuterMessage
-} from "shared-libs/public-api";
 import { FormGroup } from "@angular/forms";
+import { IIndividualEntity } from "projects/shared-libs/src/lib/cxi-form.modules/cxi-interfaces/IIndividualEntity";
+import { IValidationOuterMessage } from "projects/shared-libs/src/lib/cxi-form.modules/cxi-interfaces/IValidationMessage";
+import { CxiIndividualFormModalComponent } from "projects/shared-libs/src/lib/cxi-form.modules/cxi-individual-form-modal/cxi-individual-form-modal.component";
 
 /* FAKE DATA */
 const BENEFICIAL_OWNER_DATA = [

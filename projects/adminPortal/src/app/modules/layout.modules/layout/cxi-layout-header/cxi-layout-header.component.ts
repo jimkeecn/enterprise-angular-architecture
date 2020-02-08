@@ -20,6 +20,7 @@ import { trigger, animate, style, transition } from "@angular/animations";
 })
 export class CxiLayoutHeaderComponent implements OnInit {
   profileVisible: boolean = false;
+  gsTurn: boolean = false;
   constructor() {}
 
   ngOnInit() {}
