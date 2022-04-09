@@ -35,7 +35,7 @@
     "document-register-element": "^1.7.2",
     "fs": "0.0.1-security",
     "hammerjs": "^2.0.8",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ng2-charts": "^2.3.0",
     "rxjs": "~6.4.0",
     "subsink": "^1.0.0",
